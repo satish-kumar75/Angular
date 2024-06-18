@@ -1,0 +1,10 @@
+.active {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.not-active {
+    background-color: green;
+    color: white;
+}
