@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-zinc-800 text-white flex flex-col items-center justify-center">
+    <button class="bg-blue-600 px-6 py-2 rounded-lg" routerLink="/home">Go To Home</button>
+
+    <button (click)="toggleActive()" [class.active]="isActive" [class.not-active]="!isActive"
+        class="px-4 py-2 mt-4 text-white rounded-lg">
+        Click Me
+    </button>
+
+    <button [class.apple]="fruitName == 'apple'" class="px-4 py-2 mt-4 text-white rounded-lg">
+        Click Me
+    </button>
+    <button class="px-4 py-2 mt-4 text-white rounded-lg bg-purple-600" (click)="handleButtonClick()">
+        Click Me
+    </button>
+
+    <input type="text" class="bg-transparent border border-orange-400 rounded-lg mt-3 p-2"
+        (keyup)="handleKeyUp($event)">
+
+    <input type="text" [style.border]="isActive ? '2px solid purple' : '2px solid red' "
+        class="bg-transparent border border-orange-400 rounded-lg mt-3 p-2" value="{{stateName()}}"
+        (keyup.A)="handleKeyPress()">
+
+    <input type="text" class="bg-transparent border border-orange-400 rounded-lg mt-3 p-2" [(ngModel)]="stateName">
+
+    <select [(ngModel)]="stateName" class="bg-black mt-3 p-2 rounded-lg outline-none">
+        <option value="">Select State</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Goa">Goa</option>
+        <option value="Utter Pradesh">Utter Pradesh</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+    </select>
+</div>
